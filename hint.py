@@ -25,4 +25,32 @@ print (small(1,2,0))
 print (small(1,2,3))
 print (small(20,39,3))
 
+[ m ** 2 if m > 10 else m ** 4 for m in range(50)]
+
+#4
+testList = [1,2,3]
+x,y,z = testList
+print (x,y,z)
+
+#5
+#打印模块的文件路径
+import threading
+import socket
+
+print (threading)
+print (socket)
+
+#6
+testDict = {i : i * i for i in xrange(10)}
+testSet = {i * 2 for i in xrange(10)}
+
+print (testDict)
+print (testSet)
+
+#7
+#我们可以在pdb模块的帮助下在python脚本中设置断点
+
+import pdb
+pdb.set_trace()
+
 
