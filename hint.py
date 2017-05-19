@@ -134,3 +134,26 @@ test(*testDict) #一个星号的时候只对键有作用
 test(**testDict) #两个星号的时候只对作用
 
 test(*testList) #如果是列表的话，解包只需要一个星号
+
+
+#18
+#使用字典来存储选择操作
+stdcalc = {
+	'sum':lambda x,y:x + y,
+	'subtract':lambda x,y: x - y
+	}
+
+print (stdcalc['sum'](9,3))
+pritn (stdcalc['subtract'](9.3))
+
+
+#19
+#python2
+result = (lambda k :reduce(int.__mul__,range(1,k + 1),1))(3)
+print (result)
+
+#python3
+import functools
+result = (lambda k : functools.reduce(int.__mul__,range(1,k + 1),1))(3)
+
+print (result) # 6
