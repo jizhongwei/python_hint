@@ -53,4 +53,16 @@ print (testSet)
 import pdb
 pdb.set_trace()
 
+#8
+#开启文件共享
+#python2
+python -m SimpleHTTPServer
+
+#python3
+python3 -m http.server
+
+#9
+test = [1,2,3,4]
+print (dir(test))
+
 
