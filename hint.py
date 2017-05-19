@@ -65,4 +65,20 @@ python3 -m http.server
 test = [1,2,3,4]
 print (dir(test))
 
+#10
+if m in [1,2,3,4]:
+if m in {1,2,3,4}:
+
+#11
+import sys
+#detect the python version currently in use.
+if not hasattr(sys,"hexversion") or sys.hexversion != 50660080:
+	print ('sorry ,you aren\'t running on python 3.5n')
+	print ("please upgrade to 3.5.n")
+	sys.exit(1)
+
+#print python version in a readable format.
+print ("current python version:",sys.version)
+
+#或者可以使用sys.version_info >= (3,5) 来替换上面代码的sys.hexversion != 5066008#0
 
