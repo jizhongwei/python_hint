@@ -157,3 +157,20 @@ import functools
 result = (lambda k : functools.reduce(int.__mul__,range(1,k + 1),1))(3)
 
 print (result) # 6
+
+
+#20
+#找到列表中出现最频繁的数
+
+test = [1,2,3,4,2,2,3,1,4,4,4]
+print (max(set(test),key = test.count))
+
+#21
+#重置递归限制
+import sys
+x = 1001
+print (sys.getrecursionlimit())
+
+sys.setrecursionlimit(x)
+print (sys.getrecursionlimit())
+
