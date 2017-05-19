@@ -82,3 +82,20 @@ print ("current python version:",sys.version)
 
 #或者可以使用sys.version_info >= (3,5) 来替换上面代码的sys.hexversion != 5066008#0
 
+
+#12
+test = ['I','Like','Python','automation']
+
+print ''.join(test)
+
+#13
+testList = [1,4,5]
+testList.reverse()
+print (testList)
+
+for element in reversed([1,23,4,5]):
+	print (element)
+
+"xiaoniao"[::-1]
+
+[1,2,4,9][::-1]
