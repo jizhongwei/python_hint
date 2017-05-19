@@ -98,4 +98,25 @@ for element in reversed([1,23,4,5]):
 
 "xiaoniao"[::-1]
 
-[1,2,4,9][::-1]
+[1,2,4,9][::-1
+
+
+#14
+testlist = [10,20,30]
+for index,value in enumerate(testlist):
+	print (index,': ',value)
+	
+#15
+class Shapes:
+	Circle,Square,Triangle,Quadrangle = range(4)
+	
+print (Shapes.Circle)
+print (Shapes.Square)
+print (Shapes.Triangle)
+print (Shapes.Quadrangle)
+
+#16
+def x():
+	return 1,2,3,4
+	
+a,b,c,d = x()
