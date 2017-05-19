@@ -174,3 +174,45 @@ print (sys.getrecursionlimit())
 sys.setrecursionlimit(x)
 print (sys.getrecursionlimit())
 
+
+#22
+#检查一个对象的内存使用
+#在python 2.7中，一个32比特的整数占用24字节，在python 3.5中利用28字节。为确定
+#内存使用，我们可以调用getsizeof方法。
+
+#在python 2.7 中：
+import sys
+x = 1
+print (sys.getsizeof(x))
+# ---> 24
+
+#python 3.5 中：
+import sys
+x = 1
+print (sys.getsizeof(x))
+#----> 28
+
+#23
+#使用__slots__来减少内存开支
+#你是否注意到你的python应用占用许多资源特别是内存，有一个技巧是使用__slots__类变#量来在一定程度上减少内存开支
+
+import sys
+
+class FileSystem(object):
+	def __init__(self,files,folders,devices):
+		self.files = files
+		self.folders = folders
+		self.devices = devices
+print (sys.getsizeof(FileSystem))
+
+class FileSystem_1(object):
+	__slots__ = ['files','folders','devices']
+	def __init__(self,files,folders,devices):
+		self.files = files
+		self.folders = folders
+		self.devices = devices
+
+print (sys.getsizeof(FileSystem_1))
+
+#很明显，可以从结果中看到确实有内存使用上的节省，但是你只应该在一个类的内存开销
+#不必要得大时才使用__slots__。只在对应用进行性能分析后才使用它，不然的话，你只是使得代码难以改变而没有真正的益处。
