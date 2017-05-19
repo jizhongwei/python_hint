@@ -120,3 +120,17 @@ def x():
 	return 1,2,3,4
 	
 a,b,c,d = x()
+
+#17
+
+def test(x,y,z):
+	print (x,y,z)
+
+testDict = {'x':1,'y':2,'z':3}
+testList = [10,20,30]
+
+test(*testDict) #一个星号的时候只对键有作用
+
+test(**testDict) #两个星号的时候只对作用
+
+test(*testList) #如果是列表的话，解包只需要一个星号
