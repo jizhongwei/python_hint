@@ -216,3 +216,37 @@ print (sys.getsizeof(FileSystem_1))
 
 #很明显，可以从结果中看到确实有内存使用上的节省，但是你只应该在一个类的内存开销
 #不必要得大时才使用__slots__。只在对应用进行性能分析后才使用它，不然的话，你只是使得代码难以改变而没有真正的益处。
+
+
+#24
+#使用lambda来模仿输出方法
+import sys
+lprint = lambda *args:sys.stdout.write(' '.join(map(str,args)))
+print (lprint)
+
+#25
+#两个相关的序列构建字典
+t1 = (1,2,3)
+t2 = (10,20,30)
+
+print (dict(zip(t1,t2)))
+
+#26
+print ("http://www.baidu.com".startswith(("http://","https://")))
+print ("http://www.baidu.co.uk".endswith((".com",".co.uk")))
+
+
+#27
+import itertools
+test = [[-1,-2],[20,43],[25,35]]
+print (list(itertools.chain.from_iterable(test)))
+
+#28
+#在python中实现一个正真的switch-case语句
+def xswitch(x):
+	return xswitch._system_dict.get(x,None)
+
+xswitch._system_dict = {'files':10,'folders':5,'devices':2}
+
+print (xswitch('default'))
+print (xswitch('devices'))
